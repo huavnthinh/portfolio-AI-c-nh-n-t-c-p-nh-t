@@ -1,0 +1,72 @@
+import React from "react";
+
+const projects = [
+  {
+    name: "Web đọc văn bản",
+    description: "Trang web sử dụng Text-to-Speech API để đọc văn bản.",
+    link: "https://github.com/thinh/web-doc-van-ban"
+  },
+  {
+    name: "To-do List",
+    description: "Ứng dụng quản lý công việc với React.",
+    link: "https://github.com/thinh/todo-react"
+  },
+  {
+    name: "Portfolio cá nhân",
+    description: "Web giới thiệu bản thân tích hợp AI tự mô tả dự án.",
+    link: "https://github.com/thinh/portfolio-ai"
+  }
+];
+
+export default function Portfolio() {
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-800 p-6 font-sans">
+      <div className="max-w-3xl mx-auto">
+        <header className="mb-10 text-center">
+          <img
+            src="https://avatars.githubusercontent.com/u/placeholder"
+            alt="avatar"
+            className="w-28 h-28 mx-auto rounded-full shadow-lg mb-4"
+          />
+          <h1 className="text-3xl font-bold">Hứa Văn Thịnh</h1>
+          <p className="text-sm text-gray-500">Sinh viên CNTT - Web Developer tương lai</p>
+          <a
+            href="https://github.com/thinh"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline mt-2 block"
+          >
+            github.com/thinh
+          </a>
+        </header>
+
+        <section>
+          <h2 className="text-xl font-semibold mb-4">Dự án nổi bật</h2>
+          <div className="space-y-4">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="p-4 bg-white rounded-xl shadow border hover:shadow-md transition"
+              >
+                <h3 className="text-lg font-bold">{project.name}</h3>
+                <p className="text-sm text-gray-600">{project.description}</p>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 text-sm underline mt-1 inline-block"
+                >
+                  Xem trên GitHub
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <footer className="mt-10 text-center text-xs text-gray-400">
+          © 2025 Hứa Văn Thịnh - Made with React
+        </footer>
+      </div>
+    </div>
+  );
+}
